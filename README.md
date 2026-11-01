@@ -26,6 +26,8 @@ The manifest downloads the official versioned installer, verifies SHA-256, and e
 
 ## Maintain
 
-Run Scoop's `bin/checkver.ps1 -Dir ./bucket -App corneta -Update` to refresh the version and hash from the upstream release. Review the resulting diff, verify extraction and dependency notices, and commit the update. This repository does not automatically publish new versions.
+The update workflow checks the latest stable GitHub release every six hours. It verifies the release files, SHA-256 checksums and installer signature before committing the new version and checksum. It uses this repository's temporary `GITHUB_TOKEN`; no persistent publishing key is required. Downgrades and changed bytes for an existing version are rejected.
+
+For a manual check, run **Update Corneta** in Actions with `publish=false` (the default). Use `publish=true` from `main` to commit a verified update. Pull requests validate without committing. The verifier is pinned to a reviewed commit of [Corneta](https://github.com/pitroldev/corneta); update that pin when its distribution contract changes.
 
 Corneta source and these manifests are MIT licensed. Bundled dependencies retain their respective licenses. Application support: [pitroldev/corneta](https://github.com/pitroldev/corneta/issues).
