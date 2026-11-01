@@ -1,0 +1,43 @@
+{
+    "version": "0.13.1",
+    "description": "Local multistreaming for Windows with unified chat and stream replays.",
+    "homepage": "https://www.corneta.live/",
+    "license": "MIT",
+    "notes": [
+        "Requires Windows 10 or newer (x64) and Microsoft Edge WebView2 Runtime.",
+        "Use Scoop to update this installation; the in-app updater uses the standalone installer.",
+        "Application data stays in your Windows profile and is not removed by Scoop uninstall.",
+        "Bundled FFmpeg and MediaMTX retain their own licenses in the third-party directory."
+    ],
+    "suggest": {
+        "Microsoft Edge WebView2": "extras/webview2"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/pitroldev/corneta/releases/download/v0.13.1/Corneta_0.13.1_x64-setup.exe#/dl.7z",
+            "hash": "e9ec5e78bcdf91f47a5770ed6f83f9601176875c84756f9a67a24519dbc52192"
+        }
+    },
+    "installer": {
+        "script": "Remove-Item -LiteralPath \"$dir\\`$PLUGINSDIR\", \"$dir\\uninstall.exe\" -Recurse -Force"
+    },
+    "shortcuts": [
+        [
+            "corneta.exe",
+            "Corneta"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/pitroldev/corneta"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pitroldev/corneta/releases/download/v$version/Corneta_$version_x64-setup.exe#/dl.7z",
+                "hash": {
+                    "url": "$baseurl/SHA256SUMS.txt"
+                }
+            }
+        }
+    }
+}
