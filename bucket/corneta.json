@@ -1,5 +1,5 @@
 {
-    "version": "0.15.0",
+    "version": "0.15.1",
     "description": "Local multistreaming for Windows with unified chat and stream replays.",
     "homepage": "https://www.corneta.live/",
     "license": "MIT",
@@ -14,8 +14,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/pitroldev/corneta/releases/download/v0.15.0/Corneta_0.15.0_x64-setup.exe#/dl.7z",
-            "hash": "c6e3bd1ce200fc9d95e35cdabc4f0497c321060974720da2e62e933637595a3e"
+            "url": "https://github.com/pitroldev/corneta/releases/download/v0.15.1/Corneta_0.15.1_x64-setup.exe#/dl.7z",
+            "hash": "fe398db3fff9fc98752d6cb9551d161ec0471a6e676527e348c89069057d653b"
         }
     },
     "installer": {
